@@ -15,4 +15,8 @@ public class Computer {
     public void startPlayer(){
         musicPlayer.playMusic();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main
