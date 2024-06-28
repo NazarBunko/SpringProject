@@ -1,7 +1,10 @@
 package spring.project;
 
+import org.springframework.stereotype.Component;
+
+
 public class ClassicalMusic implements Music {
-    private ClassicalMusic() {}
+    public ClassicalMusic() {}
     @Override
     public String getSong() {
         return "Classical";
