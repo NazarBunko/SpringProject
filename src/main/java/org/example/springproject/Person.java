@@ -3,7 +3,12 @@ package org.example.springproject;
 public class Person {
     private Pet pet;
 
-    Person(Pet pet) {
+    Person() {
+        System.out.println("Person bean is created");
+    }
+
+    public void setPet(Pet pet) {
+        System.out.println("Class Person: set pet");
         this.pet = pet;
     }
 
