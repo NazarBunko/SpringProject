@@ -1,18 +1,33 @@
 package org.example.springproject;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component("personBean")
 public class Person {
+    @Autowired
+    @Qualifier("catBean")
     private Pet pet;
+
     private String surname;
     private int age;
 
-    Person() {
+    /*Person() {
         System.out.println("Person bean is created");
-    }
+    }*/
+
+    /*@Autowired
+    public Person(@Qualifier("catBean") Pet pet){
+        System.out.println("Person bean is created");
+        this.pet = pet;
+    }*/
 
     public void callYourPet(){
         System.out.println("Hello, my pet!");
         pet.say();
     }
+
 
     public void setPet(Pet pet) {
         System.out.println("Class Person: set pet");
