@@ -1,8 +1,10 @@
 package org.example.springproject;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component("catBean")
+//@Component("cat")
+//@Scope("prototype")
 public class Cat implements Pet{
 
     public Cat(){
