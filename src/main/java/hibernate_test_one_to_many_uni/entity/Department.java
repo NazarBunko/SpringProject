@@ -1,4 +1,4 @@
-package hibernate_test_one_to_many_bi.entity;
+package hibernate_test_one_to_many_uni.entity;
 
 
 import jakarta.persistence.*;
@@ -24,7 +24,8 @@ public class Department {
     @Column(name = "min_salary")
     private int minSalary;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "department", fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "department_id")
     private List<Employee> employees;
 
     public Department() {
@@ -41,7 +42,6 @@ public class Department {
             this.employees = new ArrayList<Employee>();
         }
         this.employees.add(employee);
-        employee.setDepartment(this);
     }
 
     public int getId() {
