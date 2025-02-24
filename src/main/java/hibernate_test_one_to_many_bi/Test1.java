@@ -1,7 +1,7 @@
-package hibernate_test2;
+package hibernate_test_one_to_many_bi;
 
-import hibernate_test2.entity.Detail;
-import hibernate_test2.entity.Employee;
+import hibernate_test_one_to_many_bi.entity.Department;
+import hibernate_test_one_to_many_bi.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -11,29 +11,20 @@ public class Test1 {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
-                .addAnnotatedClass(Detail.class)
+                .addAnnotatedClass(Department.class)
                 .buildSessionFactory();
 
         Session session = null;
 
         try{
-            /*Session session = factory.getCurrentSession();
-            Employee employee = new Employee("Michail", "Ivanov", "HR", 750);
-            Detail detail = new Detail("Lviv", "0684568934", "bunkonazar@gmail.com");
-            employee.setEmpDetail(detail);
-            session.beginTransaction();
-
-            session.save(employee);
-
-            session.getTransaction().commit();
-
-            System.out.println("Done!");*/
+            /*Employee emp1 = new Employee("Nazar", "Bunko", 500);
+            Employee emp2 = new Employee("Ivan", "Lox", 600);
+            Department dep = new Department("IT", 600, 500);
+            dep.addEmployeeToDepartment(emp1);
+            dep.addEmployeeToDepartment(emp2);*/
 
             session = factory.getCurrentSession();
             session.beginTransaction();
-
-            Employee emp = session.get(Employee.class, 1);
-
 
             session.getTransaction().commit();
 

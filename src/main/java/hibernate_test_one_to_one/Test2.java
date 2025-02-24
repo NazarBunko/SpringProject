@@ -1,7 +1,7 @@
-package hibernate_test2;
+package hibernate_test_one_to_one;
 
-import hibernate_test2.entity.Detail;
-import hibernate_test2.entity.Employee;
+import hibernate_test_one_to_one.entity.Detail;
+import hibernate_test_one_to_one.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -20,7 +20,7 @@ public class Test2 {
             session = factory.getCurrentSession();
             session.beginTransaction();
 
-            session.createQuery("delete from Employee where id=2").executeUpdate();
+
 
             session.getTransaction().commit();
 
